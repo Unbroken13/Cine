@@ -5,11 +5,14 @@ package logica;
 public class Pelicula {
     
     private String nombre;
-    private int fila, asiento;
     private boolean esPremium;
+    
+    /*
+    private int fila, asiento;
     private boolean centinela;
     private char asientos [][];
-
+    */
+    
     //CONSTRUCTORES
     public Pelicula() {
     }
@@ -27,7 +30,7 @@ public class Pelicula {
     ** Si la película NO es Premium, entonces crea una matriz de 10x10 asientos.
     ** En ambos casos, sea Premium o no, Asigna la leta 'L' en cada espacio, donde representa
     ** que ese espacio esta LIBRE. 
-    **/
+    
     public void crearAsientos(boolean premium){
        if (esPremium) {
            asientos = new char [20][20];
@@ -47,7 +50,7 @@ public class Pelicula {
             }
         }
     }
-    
+    **/
     
      /**
     ** El método cantidadDeFilas() devuelve un String para indicarle
@@ -55,7 +58,7 @@ public class Pelicula {
     ** o del 1-10 si la película NO es premium.
     ** 
     ** 
-    **/
+    
     public String cantidadDeFilas (boolean esPremium){
         if (esPremium){
             return "Por favor, indique la fila (0 - 19):";
@@ -64,7 +67,7 @@ public class Pelicula {
         }
         
     }
-    
+    **/
     
      /**
     ** El método compararAsientos() recibe como parámetro la fila y el asiento elegido
@@ -73,7 +76,7 @@ public class Pelicula {
     **  está disponible, y le indica al usuario que el asiento pudo ser reservado.
     ** En caso de que el espacio ya haya sido ocupado con anterioridad, el método
     ** le indica al usuario que no se pudo reservar por dicho motivo.
-    **/
+    
     public void compararAsientos(int fila, int asiento){
         if (asientos[fila][asiento] == 'L') {           
             asientos[fila][asiento] = 'X' ;
@@ -83,22 +86,23 @@ public class Pelicula {
         }
 
     }
+    **/
   
     /**
     * El método mapaAsientos() dibuja en consola tanto los asientos 'L' (libres) como los
     * asientos 'X' (ocupados) para que el usuario pueda visualizarlos y poder elegir
     * con mayor facilidad qué espacio desea reservar.
-    **/
+    
     public void mapaAsientos(){
         for (int f = 0; f < asientos.length; f++) {
-            System.out.print("fila " + (f + 1) + "  ");
+            System.out.print("fila " + f + "  ");
             for (int c = 0; c < asientos.length; c++) {
                 System.out.print("[" + asientos[f][c] + "]");
             }
             System.out.println("");
         }
     }
-    
+    **/
     
     //MÉTODOS SETTERS Y GETTERS:
     
@@ -109,6 +113,16 @@ public class Pelicula {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    public boolean isEsPremium() {
+        return esPremium;
+    }
+
+    public void setEsPremium(boolean esPremium) {
+        this.esPremium = esPremium;
+    }
+    
+    /*
 
     public char[][] getAsientos() {
         return asientos;
@@ -134,14 +148,6 @@ public class Pelicula {
         this.asiento = asiento;
     }
 
-    public boolean isEsPremium() {
-        return esPremium;
-    }
-
-    public void setEsPremium(boolean esPremium) {
-        this.esPremium = esPremium;
-    }
-
     public boolean isCentinela() {
         return centinela;
     }
@@ -149,5 +155,7 @@ public class Pelicula {
     public void setCentinela(boolean centinela) {
         this.centinela = centinela;
     }
+
+    */
 
 }

@@ -6,6 +6,7 @@ package com.gabi.a.orellana.practica.cine;
 
 import java.util.Scanner;
 import logica.Pelicula;
+import logica.Sala;
 
 /**
  *
@@ -16,6 +17,7 @@ public class PracticaCine {
     public static void main(String[] args) {
         
         Pelicula peli1;
+        Sala sala1;
         Scanner sc = new Scanner(System.in);
         
         String respuesta;
@@ -23,7 +25,7 @@ public class PracticaCine {
         boolean centinela = false;
 
         
-        System.out.println("**********Bienvenido a The Last Cinema");
+        System.out.println("**********Bienvenido a The Last Cinema**********");
         System.out.println("¿Qué pelicula desea ver?");
 
         System.out.println("1. El Planeta de los Simios: Nuevo Reino");
@@ -38,19 +40,22 @@ public class PracticaCine {
         switch (opcion) {
             case 1:
                 peli1 = new Pelicula("El Planeta de los Simios: Nuevo Reino", true);
-                
+                sala1 = new Sala(peli1);
                 break;
 
             case 2:
                 peli1 = new Pelicula("DeadPool y Wolwerine", true);
+                sala1 = new Sala(peli1);
                 break;
 
             case 3:
                 peli1 = new Pelicula("Godzilla x Kong: El nuevo Imperio", false);
+                sala1 = new Sala(peli1);
                 break;
 
             case 4:
                 peli1 = new Pelicula("KungFu Panda 4", false);
+                sala1 = new Sala(peli1);
                 break;
 
             case 5:
@@ -62,23 +67,23 @@ public class PracticaCine {
 
 
         
-        peli1.crearAsientos(peli1.isEsPremium());
+        sala1.crearAsientos(peli1.isEsPremium());
         System.out.println("Exelente elección.");
         System.out.println("La película elegida es: " + peli1.getNombre());
-        System.out.println(peli1.isEsPremium());
+
         while (centinela != true) {
 
-            peli1.mapaAsientos();
+            sala1.mapaAsientos();
             //System.out.println("Por favor, indique la fila (0 - 9): ");
-            System.out.println(peli1.cantidadDeFilas(peli1.isEsPremium()));
-            peli1.setFila( sc.nextInt() );
+            System.out.println(sala1.cantidadDeFilas(peli1.isEsPremium()));
+            sala1.setFila( sc.nextInt() );
             
             System.out.println("Por favor, indique el asiento (0 - 9): ");
-            peli1.setAsiento( sc.nextInt() );
+            sala1.setAsiento( sc.nextInt() );
            
            
            
-            peli1.compararAsientos(peli1.getFila(), peli1.getFila());
+            sala1.reservarAsientos(sala1.getFila(), sala1.getFila());
             
             System.out.println("¿Desea terminar las reservas?");
             System.out.println("S: sí; cualquier otra tecla: NO ");
