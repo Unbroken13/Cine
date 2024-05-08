@@ -1,22 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
+package logica;
 
-package com.gabi.a.orellana.practica.cine;
+// @author GABI
 
 import java.util.Scanner;
-import logica.Pelicula;
-import logica.Sala;
 
-/**
- *
- * @author GABI
- */
-public class PracticaCine {
-
-    public static void main(String[] args) {
-        
-        Pelicula peli1;
+public class Logica {
+    
+    Pelicula peli1;
         Sala sala1;
         Scanner sc = new Scanner(System.in);
         
@@ -24,8 +14,8 @@ public class PracticaCine {
         int opcion;
         boolean centinela = false;
 
-        
-        System.out.println("**********Bienvenido a The Last Cinema**********");
+        public void inicial (){
+            System.out.println("**********Bienvenido a The Last Cinema**********");
         System.out.println("¿Qué pelicula desea ver?");
 
         System.out.println("1. El Planeta de los Simios: Nuevo Reino. Valor: $5.500");
@@ -104,36 +94,7 @@ public class PracticaCine {
             */
             
         }
-        
-         
-         
-        /*
-        while (centinela != true) {
-
-            sala1.mapaAsientos();
-            //System.out.println("Por favor, indique la fila (0 - 9): ");
-            System.out.println(sala1.cantidadDeFilas(peli1.isEsPremium()));
-            sala1.setFila( sc.nextInt() );
-            
-            System.out.println("Por favor, indique el asiento (0 - 9): ");
-            sala1.setAsiento( sc.nextInt() );
-           
-           
-           
-            sala1.reservarAsientos(sala1.getFila(), sala1.getAsiento());
-            
-            System.out.println("¿Desea terminar las reservas?");
-            System.out.println("S: sí; cualquier otra tecla: NO ");
-            respuesta = sc.next();
-
-            if (respuesta.equalsIgnoreCase("S")) {
-                centinela = true;
-            }
         }
-        */
         
-        
-        
-        
-    }
+
 }

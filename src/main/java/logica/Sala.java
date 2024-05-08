@@ -7,12 +7,12 @@ public class Sala {
     private char asientos [][];
     private Pelicula pelicula;
 
+    
+    
     public Sala(Pelicula pelicula) {
         this.pelicula = pelicula;
     }
-    
-    
-    
+   
     public void crearAsientos(boolean premium){
        if (pelicula.isEsPremium()) {
            asientos = new char [20][20];
@@ -64,7 +64,6 @@ public class Sala {
         } else {
             System.out.println("Lo lamento, el asiento ya está reservado.");
         }
-
     }
     
     
@@ -80,8 +79,7 @@ public class Sala {
             return "Por favor, indique la fila (0 - 19):";
         } else {
             return "Por favor, indique la fila (0 - 1):";
-        }
-        
+        }     
     }
     
      
