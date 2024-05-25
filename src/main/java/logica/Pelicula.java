@@ -6,7 +6,7 @@ public class Pelicula {
     
     private String nombre;
     private String director;
-    private String duración;
+    private String duracion;
     private int valor;
     private boolean esPremium;
     
@@ -15,8 +15,10 @@ public class Pelicula {
     public Pelicula() {
     }
 
-    public Pelicula(String nombre, boolean esPremium) {
+    public Pelicula(String nombre,String director, String duracion , boolean esPremium) {
         this.nombre = nombre;
+        this.director = director;
+        this.duracion = duracion;
         this.esPremium = esPremium;
     }
     
@@ -49,6 +51,25 @@ public class Pelicula {
     public void setEsPremium(boolean esPremium) {
         this.esPremium = esPremium;
     }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public String getDuración() {
+        return duracion;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+    @Override
+    public String toString() {
+        return "{" + "nombre=" + nombre + ", director=" + director + ", duracion=" + duracion + ", valor= $" + valor + '}';
+    }
+    
+    
     
 
 }

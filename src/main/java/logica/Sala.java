@@ -1,16 +1,25 @@
 package logica;
 
 // @author GABI
+
+import java.util.List;
+
 public class Sala {
     
+    private String numeroDeSala;
     private int fila, asiento;
     private char asientos [][];
     private Pelicula pelicula;
 
+    public Sala() {
+    }
     
     
-    public Sala(Pelicula pelicula) {
+    
+    
+    public Sala(Pelicula pelicula, String numeroDeSala) {
         this.pelicula = pelicula;
+        this.numeroDeSala = numeroDeSala;
     }
    
     public void crearAsientos(boolean premium){
@@ -49,13 +58,13 @@ public class Sala {
     }
     
     
-         /**
+    /**
     ** El método compararAsientos() recibe como parámetro la fila y el asiento elegido
-    **  por el usuario. En caso de que el asiento seleccionado contenga un espacio libre 
-    ** 'L' entonces este método sustituye la 'L' por una 'X' indicado que el espacio ya no
-    **  está disponible, y le indica al usuario que el asiento pudo ser reservado.
-    ** En caso de que el espacio ya haya sido ocupado con anterioridad, el método
-    ** le indica al usuario que no se pudo reservar por dicho motivo.
+    *  por el usuario. En caso de que el asiento seleccionado contenga un espacio libre 
+    * 'L' entonces este método sustituye la 'L' por una 'X' indicado que el espacio ya no
+    *  está disponible, y le indica al usuario que el asiento pudo ser reservado.
+    * En caso de que el espacio ya haya sido ocupado con anterioridad, el método
+    * le indica al usuario que no se pudo reservar por dicho motivo.
     **/
     public void reservarAsientos(int fila, int asiento){
         if (asientos[fila][asiento] == 'L') {           
@@ -65,14 +74,11 @@ public class Sala {
             System.out.println("Lo lamento, el asiento ya está reservado.");
         }
     }
-    
-    
-     /**
+
+    /**
     * El método cantidadDeFilas() devuelve un String para indicarle
     * al usuario si tiene filas disponibles desde el 1-20, si la película es Premium
     * o del 1-10 si la película NO es premium.
-    * 
-    * 
     **/
     public String cantidadDeFilas (boolean esPremium){
         if (esPremium){
@@ -82,11 +88,10 @@ public class Sala {
         }     
     }
     
-     
-
     public char[][] getAsientos() {
         return asientos;
     }
+    
 
     public void setAsientos(char[][] asientos) {
         this.asientos = asientos;
@@ -108,16 +113,9 @@ public class Sala {
         this.asiento = asiento;
     }
 
-    /*
-    public boolean isCentinela() {
-        return centinela;
+    @Override
+    public String toString() {
+        return "Sala{" + "numeroDeSala=" + numeroDeSala + ", fila=" + fila + ", asiento=" + asiento + '}';
     }
 
-    public void setCentinela(boolean centinela) {
-        this.centinela = centinela;
-    }
-
-    */
-    
-    
 }
